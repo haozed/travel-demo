@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { getAllAirports, getAirportByID, getAirportByIATA } from "../services/database";
+import { getAllAirports, getAirportByID, getAirportByIATA, addAirport, updateAirport, deleteAirportByID } from "../services/database";
 
 import { Airport } from "../models/airport";
 
@@ -31,5 +31,35 @@ router.get('/:id', async (req: Request, res: Response) => {
         res.status(500).json({ message: "Error fetching airport"});
     }
 });
+
+router.post('/', async (req: Request, res: Response) => {
+    const newAirport: Omit<Airport, 'AirportId'> = req.body;
+    try {
+        await addAirport(newAirport);
+        res.status(202).json({ message: `New airport with name ${newAirport.AirportName} added` });
+    } catch (error) {
+        res.status(500).json({ message: "Error adding airport" });
+    }
+})
+
+router.put('/', async (req: Request, res: Response) => {
+    const updatedAirport: Airport = req.body;
+    try {
+        await updateAirport(updatedAirport);
+        res.status(203).json({ message: `Airport with ID ${updatedAirport.AirportId} has been updated` });
+    } catch (error) {
+        res.status(500).json({ message: "Error updating airport" });
+    }
+})
+
+router.delete('/', async (req:Request, res:Response) => {
+    const id = parseInt(req.params.id);
+    try {
+        await deleteAirportByID(id);
+        res.status(204).json({ message: `Airport with ID ${id} has been deleted` });
+    } catch(error) {
+        res.status(500).json({ message: "Error deleting airport" });
+    }
+})
 
 export default router;

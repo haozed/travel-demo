@@ -22,7 +22,7 @@ router.get('/:id', async (req: Request, res: Response) => {
     try {
         const city = await getCityByID(id);
         if (city) {
-            res.status(200).json(city);
+            res.status(201).json(city);
         } else {
             res.status(404).json({ message: `No city found with ID: ${id}`});
         }
