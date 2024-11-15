@@ -17,4 +17,19 @@ router.get('/', async (req: Request, res: Response) => {
     }
 });
 
+router.get('/:id', async (req: Request, res: Response) => {
+    const id = parseInt(req.params.id);
+    try {
+        const airport = await getAirportByID(id);
+        if (airport) {
+            res.status(200).json(airport);
+        } else {
+            res.status(404).json({ message: `No airport found with ID: ${id}`});
+        }
+    } 
+    catch (error){
+        res.status(500).json({ message: "Error fetching airport"});
+    }
+});
+
 export default router;
