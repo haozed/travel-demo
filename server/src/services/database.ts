@@ -1,6 +1,6 @@
 import { Airport } from "../models/airport";
 
-import {airportData} from "../../../data/mockData";
+import { airportData } from "../../../data/mockData";
 
 const ad: Airport[] = airportData
 
