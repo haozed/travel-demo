@@ -42,7 +42,7 @@ router.post('/', async (req: Request, res: Response) => {
     }
 })
 
-router.put('/', async (req: Request, res: Response) => {
+router.put('/:id', async (req: Request, res: Response) => {
     const updatedAirport: Airport = req.body;
     try {
         await updateAirport(updatedAirport);
@@ -52,7 +52,7 @@ router.put('/', async (req: Request, res: Response) => {
     }
 })
 
-router.delete('/', async (req:Request, res:Response) => {
+router.delete('/:id', async (req:Request, res:Response) => {
     const id = parseInt(req.params.id);
     try {
         await deleteAirportByID(id);
