@@ -61,7 +61,7 @@ router.delete('/:id', async (req:Request, res:Response) => {
     const id = parseInt(req.params.id);
     try {
         await deleteAirportByID(id);
-        res.status(204).json({ message: `Airport with ID ${id} has been deleted` });
+        res.status(203).json({ message: `Airport with ID ${id} has been deleted` });
     } catch(error) {
         res.status(500).json({ message: "Error deleting airport" });
     }
