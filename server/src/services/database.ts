@@ -56,3 +56,40 @@ export async function getCityByName(name: string): Promise<City[]> {
     });
   }
 
+export async function addAirport(airport: Omit<Airport, 'AirportId'>): Promise<void> {
+return new Promise((resolve) => {
+    setTimeout(() => {
+    const maxAirportId = ad.length > 0 ? Math.max(...ad.map(a => a.AirportId)) : 0;
+    const newAirport: Airport = {
+        AirportId: maxAirportId + 1,
+        ...airport,
+    };
+    ad.push(newAirport);
+    resolve();
+    }, 300);
+});
+}
+
+export async function updateAirport(airport: Airport): Promise<void> {
+return new Promise((resolve) => {
+    setTimeout(() => {
+    const index = ad.findIndex(a => a.AirportId === airport.AirportId);
+    if (index >= 0) {
+        ad[index] = airport;
+    }
+    resolve();
+    }, 300);
+});
+}
+
+export async function deleteAirportByID(airportId: number): Promise<void> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const index = ad.findIndex(a => a.AirportId === airportId);
+        if (index >= 0) {
+          ad.splice(index, 1);
+        }
+        resolve();
+      }, 300);
+    });
+  }
