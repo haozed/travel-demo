@@ -1,3 +1,5 @@
+// spellchecker: disable
+
 export const airportData = [
     {
       AirportId: 3411,
@@ -90,4 +92,79 @@ export const airportData = [
       CityId: 377,
     },
   ];
+
+
+export const cityData = [
+  {
+      CityId: 1079,
+      Name: "South Lake Tahoe",
+      Longitude: -119.995003,
+      Latitude: 38.893902,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 717,
+      Name: "Medford",
+      Longitude: -122.873001,
+      Latitude: 42.374199,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 510,
+      Name: "Houston",
+      Longitude: -95.432134,
+      Latitude: 29.806600,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 991,
+      Name: "SARATOGA",
+      Longitude: -106.823997,
+      Latitude: 41.444901,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 500,
+      Name: "Homestead",
+      Longitude: -80.383598,
+      Latitude: 25.488600,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 10,
+      Name: "Akron",
+      Longitude: -88.710368,
+      Latitude: 40.709732,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 787,
+      Name: "Nashua",
+      Longitude: -71.514801,
+      Latitude: 42.781700,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 433,
+      Name: "Goodyear",
+      Longitude: -112.375999,
+      Latitude: 33.422501,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 61,
+      Name: "Atlanta",
+      Longitude: -84.484381,
+      Latitude: 33.732379,
+      DailyExpense: 0.00,
+  },
+  {
+      CityId: 282,
+      Name: "Denton",
+      Longitude: -97.197998,
+      Latitude: 33.200699,
+      DailyExpense: 0.00,
+  },
+];
+
   
