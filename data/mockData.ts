@@ -2,6 +2,15 @@
 
 export const airportData = [
     {
+      AirportId: 3484,
+      AirportName: "Los Angeles International Airport",
+      IATACode: "LAX",
+      ICAOCode: "KLAX",
+      Longitude: -118.407997,
+      Latitude: 33.942501,
+      CityId: 664,
+    },
+    {
       AirportId: 3411,
       AirportName: "Barter Island LRRS Airport",
       IATACode: "BTI",
@@ -95,6 +104,13 @@ export const airportData = [
 
 
 export const cityData = [
+  {
+    CityId: 664,
+    Name: "Los Angeles",
+    Longitude: -118.410500,
+    Latitude: 34.100901,
+    DailyExpense: 0.00,
+  },  
   {
       CityId: 1079,
       Name: "South Lake Tahoe",
