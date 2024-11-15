@@ -20,4 +20,12 @@ export async function getAirportByID(airportID: number): Promise<Airport | undef
     });
 }
 
+export async function getAirportByIATA(code: string): Promise<Airport[]> {
+    const queryCode = code.toLowerCase();
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(ad.filter(a => a.IATACode.toLowerCase().includes(queryCode)));
+      }, 300);
+    });
+  }
 
