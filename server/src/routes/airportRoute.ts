@@ -44,6 +44,11 @@ router.post('/', async (req: Request, res: Response) => {
 
 router.put('/:id', async (req: Request, res: Response) => {
     const updatedAirport: Airport = req.body;
+    const id = parseInt(req.params.id);
+    if (updatedAirport.AirportId != id) {
+        res.status(405).json({ message: "You can not update the ID of airport!" });
+        return;
+    }
     try {
         await updateAirport(updatedAirport);
         res.status(203).json({ message: `Airport with ID ${updatedAirport.AirportId} has been updated` });
